@@ -30,6 +30,8 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
+  DELETE_OLD_WORKFLOW: true
+  DELETE_OLD_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -134,13 +136,14 @@ jobs:
         
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@main
+      if: env.DELETE_OLD_WORKFLOW == 'true' && !cancelled()
       with:
         retain_days: 1
         keep_minimum_runs: 3
         
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.2.1
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      if: env.DELETE_OLD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 3
         delete_tags: true
