@@ -122,11 +122,18 @@ jobs:
 
     - name: Create Release
       uses: ncipollo/release-action@v1
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         artifacts: ./openwrt/bin/targets/bcm27xx/bcm2711/*
         name: ${{ steps.generate_name.outputs.release_name }}
         tag: ${{ steps.generate_name.outputs.release_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Delete workflow runs
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 1
+        keep_minimum_runs: 3
         
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.2.1
