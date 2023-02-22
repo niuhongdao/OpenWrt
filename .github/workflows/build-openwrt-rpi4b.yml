@@ -11,9 +11,9 @@
 name: Build OpenWrt rpi4b
 
 on:
-  workflow_dispatch:
+  #workflow_dispatch:
   schedule:
-    - cron: 18 2 * * *
+    - cron: 22 2 * * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
