@@ -13,7 +13,7 @@ name: Build OpenWrt rpi4b
 on:
   #workflow_dispatch:
   schedule:
-    - cron: 30 2 * * *
+    - cron: 0 20 * * 2
   watch:
     types: [started]
 
