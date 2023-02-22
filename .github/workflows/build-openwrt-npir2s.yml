@@ -11,10 +11,13 @@
 name: Build OpenWrt npir2s
 
 on:
-  schedule:
-    - cron: 0 20 * * 5
-  watch:
-    types: [started]
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
