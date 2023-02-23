@@ -11,13 +11,10 @@
 name: Build OpenWrt rpi4b
 
 on:
-  repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
+  schedule:
+    - cron: 0 16 * * 4
+  watch:
+    types: [started]
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
