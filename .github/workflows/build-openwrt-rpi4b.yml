@@ -9,7 +9,9 @@
 #
 
 name: Build OpenWrt rpi4b
+
 on:
+  repository_dispatch:
   workflow_dispatch:
     inputs:
       ssh:
