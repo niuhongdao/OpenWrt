@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build rpi4b cfg
+name: Build OpenWrt rpi4b
 
 on:
   repository_dispatch:
@@ -96,9 +96,9 @@ jobs:
       run: |
         cd openwrt
         make defconfig
-        make download -j8
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
+        #make download -j8
+        #find dl -size -1024c -exec ls -l {} \;
+        #find dl -size -1024c -exec rm -f {} \;
     - name: Compile the firmware
       id: compile
       run: |
@@ -108,13 +108,11 @@ jobs:
         # make -j$(nproc) || make -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
 
-    - name: Upload bin directory
-      uses: actions/upload-artifact@main
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
-      with:
-        name: OpenWrt_directory
-        path: openwrt/cfgdir
 
-   
-        
+    - name: Upload Artifact
+      uses: actions/upload-artifact@main
+      with:
+        name: ${{ steps.generate_name.outputs.release_name }}
+        path: ./openwrt/cfgdir/*
           
+
