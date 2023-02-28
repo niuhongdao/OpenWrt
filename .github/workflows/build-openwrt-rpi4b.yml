@@ -11,7 +11,7 @@
 name: Build OpenWrt rpi4b
 
 on:
-  repository_dispatch:
+  # repository_dispatch:
   watch:
     types: started
         
