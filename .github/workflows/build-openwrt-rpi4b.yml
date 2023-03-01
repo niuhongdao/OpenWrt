@@ -11,7 +11,13 @@
 name: Build OpenWrt rpi4b
 
 on:
- [push]
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
   
         
 env:
