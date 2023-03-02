@@ -50,6 +50,8 @@ jobs:
       with:
         token: ${{ secrets.ACTIONS_TRIGGER_PAT }}
         event-type: Source Code Update
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
