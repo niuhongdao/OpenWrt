@@ -17,5 +17,6 @@
 # sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 #mkdir -p pakage/helloworld && git clone https://github.com/fw876/helloworld package/helloworld
 mkdir -p pakage/openwrt-passwall && git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
-mkdir -p pakage/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/xiaorouji/openwrt-passwall2 -b luci package/openwrt-passwall/luci-app-passwall2
+mkdir -p pakage/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall/luci-app-passwall2
+#mkdir -p pakage/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/xiaorouji/openwrt-passwall2 -b luci package/openwrt-passwall/luci-app-passwall2
 
