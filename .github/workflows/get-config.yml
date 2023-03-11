@@ -14,11 +14,16 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
+      release_type:
       ssh:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-  
+        type: choice
+        options:
+        - false
+        - true
+
         
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
