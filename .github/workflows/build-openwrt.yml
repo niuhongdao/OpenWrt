@@ -17,16 +17,16 @@ on:
         type: choice
         description: 'CPU Mpdule'
         options:
-          - rpi4b
-          - rpi4b.netdata
-          - rpi4b.passwall
-          - Production
+          - config.buildinfo.rpi4b
+          - config.buildinfo.rpi4b.netdata
+          - config.buildinfo.rpi4b.passwall
+          - config.buildinfo.npir2s
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config.buildinfo. + $(github.event.inputs.CPU_Module)
+  CONFIG_FILE: $(github.event.inputs.CPU_Module)
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
