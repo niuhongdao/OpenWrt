@@ -11,17 +11,16 @@
 name: Build OpenWrt
 
 on:
-  repository_dispatch:
   workflow_dispatch:
     inputs:
-      CPU_modle:
+      environment:
         type: choice
-	      description: Select CPU modle
+        description: CPU Mpdule
         options:
           - rpi4b
           - rpi4b.netdata
           - rpi4b.passwall
-          - npir2s
+          - Production
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
