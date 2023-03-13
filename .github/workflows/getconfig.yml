@@ -15,7 +15,6 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
-      release_type:
       CPU_modle:
         description: 'Select CPU modle'
         required: rpi4b
