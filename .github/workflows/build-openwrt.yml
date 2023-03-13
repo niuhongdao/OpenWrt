@@ -77,7 +77,7 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        [ -e $(github.event.inputs.CPU_Module) ] && mv $(github.event.inputs.CPU_Module) openwrt/.config
         
         chmod +x $DIY_P2_SH
         cd openwrt
@@ -151,7 +151,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$($(github.event.inputs.CPU_modle) + date +"%Y.%m.%d-%H%M")"
+        echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
