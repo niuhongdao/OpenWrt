@@ -17,10 +17,10 @@ on:
         type: choice
         description: 'CPU Mpdule'
         options:
-          - config.buildinfo.rpi4b
-          - config.buildinfo.rpi4b.netdata
-          - config.buildinfo.rpi4b.passwall
-          - config.buildinfo.npir2s
+          - rpi4b
+          - rpi4b.netdata
+          - rpi4b.passwall
+          - npir2s
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
