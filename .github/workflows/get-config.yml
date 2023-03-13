@@ -22,6 +22,8 @@ on:
         type: choice
         options:
         - rpi4b
+        - rpi4b.netdata
+        - rpi4b.passwall
         - npir2s
 
 env:
