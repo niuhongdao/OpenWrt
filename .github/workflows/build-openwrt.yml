@@ -15,7 +15,7 @@ on:
     inputs:
       environment:
         type: choice
-        description: CPU Mpdule
+        description: 'CPU Mpdule'
         options:
           - rpi4b
           - rpi4b.netdata
