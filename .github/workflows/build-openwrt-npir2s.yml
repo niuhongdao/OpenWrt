@@ -24,7 +24,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config.buildinfo.rpi4b.netdata
+  CONFIG_FILE: config.buildinfo.npir2s
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -121,19 +121,19 @@ jobs:
 
     - name: Cleaning
       run: |
-        cd ./openwrt/bin/targets/bcm27xx/bcm2711/
+        cd ./openwrt/bin/targets/*/*/
         rm -rf ./packages/
     - name: Upload Artifact
       uses: actions/upload-artifact@main
       with:
         name: ${{ steps.generate_name.outputs.release_name }}
-        path: ./openwrt/bin/targets/bcm27xx/bcm2711/*
+        path: ./openwrt/bin/targets/*/*/*
 
     - name: Create Release
       uses: ncipollo/release-action@v1
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        artifacts: ./openwrt/bin/targets/bcm27xx/bcm2711/*
+        artifacts: ./openwrt/bin/targets/*/*/*
         name: ${{ steps.generate_name.outputs.release_name }}
         tag: ${{ steps.generate_name.outputs.release_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
