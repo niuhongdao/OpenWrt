@@ -20,7 +20,7 @@ mkdir -p pakage/helloworld && git clone https://github.com/fw876/helloworld pack
 # mkdir -p pakage/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall/luci-app-passwall2
 
 # add AdGuardHome suport
-mkdir -p pakage/AdGuardHome && git clone https://github.com/niuhongdao/adguardhome pakage/AdGuardHome
+mkdir -p package/AdGuardHome && git clone https://github.com/niuhongdao/adguardhome package/AdGuardHome
 
 
 # add v2ray suport
