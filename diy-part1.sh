@@ -19,6 +19,10 @@ mkdir -p pakage/helloworld && git clone https://github.com/fw876/helloworld pack
 # mkdir -p pakage/openwrt-passwall && git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
 # mkdir -p pakage/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall/luci-app-passwall2
 
+# add AdGuardHome suport
+mkdir -p pakage/AdGuardHome && git clone https://github.com/niuhongdao/adguardhome pakage/AdGuardHome
+
+
 # add v2ray suport
 sed -i "/document.getElementsByName('cbid.shadowsocksr.' + sid + '.server_port')\[0\].value = ssm.port;/a\ \t\t\tdocument.getElementsByName('cbid.shadowsocksr.' + sid + '.alter_id')\[0\].value = ssm.aid; " package/helloworld/luci-app-ssr-plus/luasrc/view/shadowsocksr/ssrurl.htm
 line=`sed -n '/if info.aid and (tonumber(info.aid) > 0) then/=' package/helloworld/luci-app-ssr-plus/root/usr/share/shadowsocksr/subscribe.lua `
