@@ -123,17 +123,22 @@ jobs:
       run: |
         cd ./openwrt/bin/targets/bcm27xx/bcm2711/
         rm -rf ./packages/
+        
+    - name: Add_ipk
+      run:
+        cp -Rf ./openwrt/bin/packages ./openwrt/bin/targets/bcm27xx/bcm2711/
+        
     - name: Upload Artifact
       uses: actions/upload-artifact@main
       with:
         name: ${{ steps.generate_name.outputs.release_name }}
-        path: ./openwrt/bin/targets/bcm27xx/bcm2711/* ./openwrt/bin/packages/*
+        path: ./openwrt/bin/targets/bcm27xx/bcm2711/*
 
     - name: Create Release
       uses: ncipollo/release-action@v1
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        artifacts: ./openwrt/bin/targets/bcm27xx/bcm2711/* ./openwrt/bin/packages/*
+        artifacts: ./openwrt/bin/targets/bcm27xx/bcm2711/*
         name: ${{ steps.generate_name.outputs.release_name }}
         tag: ${{ steps.generate_name.outputs.release_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
