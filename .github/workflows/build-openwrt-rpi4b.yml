@@ -127,13 +127,13 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: ${{ steps.generate_name.outputs.release_name }}
-        path: ./openwrt/bin/targets/bcm27xx/bcm2711/*
+        path: ./openwrt/bin/targets/bcm27xx/bcm2711/* ./openwrt/bin/packages/*
 
     - name: Create Release
       uses: ncipollo/release-action@v1
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        artifacts: ./openwrt/bin/targets/bcm27xx/bcm2711/*
+        artifacts: ./openwrt/bin/targets/bcm27xx/bcm2711/* ./openwrt/bin/packages/*
         name: ${{ steps.generate_name.outputs.release_name }}
         tag: ${{ steps.generate_name.outputs.release_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
