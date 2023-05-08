@@ -126,7 +126,7 @@ jobs:
         
     - name: Add_ipk
       run:
-        cp -Rf ./openwrt/bin/packages ./openwrt/bin/targets/bcm27xx/bcm2711/
+        find ./openwrt/bin/packages/ -name "*.ipk" -exec tar czvf ./openwrt/bin/targets/bcm27xx/bcm2711/app1.tar.gz {} +
         
     - name: Upload Artifact
       uses: actions/upload-artifact@main
