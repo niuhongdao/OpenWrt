@@ -17,9 +17,9 @@
 # sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 # mkdir -p package/helloworld && git clone https://github.com/fw876/helloworld package/helloworld
 # mkdir -p package/AdGuardHome && git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/AdGuardHome
-# mkdir -p package/openwrt-passwall && git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
+mkdir -p package/openwrt-passwall && git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
 # mkdir -p package/openwrt-passwall/luci-app-passwall && git clone https://github.com/xiaorouji/openwrt-passwall -b luci package/openwrt-passwall/luci-app-passwal
-# mkdir -p package/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall/luci-app-passwall2
+mkdir -p package/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall/luci-app-passwall2
 
 # add v2ray suport
 # sed -i "/document.getElementsByName('cbid.shadowsocksr.' + sid + '.server_port')\[0\].value = ssm.port;/a\ \t\t\tdocument.getElementsByName('cbid.shadowsocksr.' + sid + '.alter_id')\[0\].value = ssm.aid; " package/helloworld/luci-app-ssr-plus/luasrc/view/shadowsocksr/ssrurl.htm
