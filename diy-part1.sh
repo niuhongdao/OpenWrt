@@ -21,10 +21,10 @@ mkdir -p package/openwrt-passwall && git clone https://github.com/xiaorouji/open
 # mkdir -p package/openwrt-passwall/luci-app-passwall && git clone https://github.com/xiaorouji/openwrt-passwall -b luci package/openwrt-passwall/luci-app-passwal
 mkdir -p package/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall/luci-app-passwall2
 
-
+echo  >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
 echo 'msgid "Manually update"' >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
 echo 'msgstr "手动更新"' >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
-echo ' '  >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
+echo  >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
 
 # add v2ray suport
 sed -i "/document.getElementsByName('cbid.shadowsocksr.' + sid + '.server_port')\[0\].value = ssm.port;/a\ \t\t\tdocument.getElementsByName('cbid.shadowsocksr.' + sid + '.alter_id')\[0\].value = ssm.aid; " package/helloworld/luci-app-ssr-plus/luasrc/view/shadowsocksr/ssrurl.htm
