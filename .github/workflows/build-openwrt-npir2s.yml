@@ -121,24 +121,24 @@ jobs:
 
     - name: Cleaning
       run: |
-        cd ./openwrt/bin/targets/*/*/
+        cd ./openwrt/bin/targets/rockchip/armv8
         rm -rf ./packages/
         
     - name: Add_ipk
       run:
-        find ./openwrt/bin/packages/ -name "*.ipk" -exec tar czvf ./openwrt/bin/targets/*/*/app1.tar.gz {} +
+        find ./openwrt/bin/packages/ -name "*.ipk" -exec tar czvf ./openwrt/bin/targets/rockchip/armv8/app1.tar.gz {} +
         
     - name: Upload Artifact
       uses: actions/upload-artifact@main
       with:
         name: ${{ steps.generate_name.outputs.release_name }}
-        path: ./openwrt/bin/targets/*/*/*
+        path: ./openwrt/bin/targets/rockchip/armv8/*
 
     - name: Create Release
       uses: ncipollo/release-action@v1
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        artifacts: ./openwrt/bin/targets/*/*/*
+        artifacts: ./openwrt/bin/targets/rockchip/armv8/*
         name: ${{ steps.generate_name.outputs.release_name }}
         tag: ${{ steps.generate_name.outputs.release_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
