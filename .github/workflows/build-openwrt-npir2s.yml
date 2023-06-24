@@ -34,7 +34,7 @@ env:
 
 jobs:
   build_openwrt:
-    name: Build OpenWrt rpi4b firmware
+    name: Build OpenWrt npir2s firmware
     runs-on: ubuntu-20.04
     if: github.event.repository.owner.id == github.event.sender.id
 
@@ -47,7 +47,7 @@ jobs:
       run: |
         time=$(date +%Y%m%d%H%M)
         release_tag="$time"
-        release_name="Rpi4b-OpenWrt-$time"
+        release_name="Npir2s-OpenWrt-$time"
         echo "release_name=$release_name" >> $GITHUB_OUTPUT
         echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
         
@@ -121,24 +121,24 @@ jobs:
 
     - name: Cleaning
       run: |
-        cd ./openwrt/bin/targets/bcm27xx/bcm2711/
+        cd ./openwrt/bin/targets/*/*/
         rm -rf ./packages/
         
     - name: Add_ipk
       run:
-        find ./openwrt/bin/packages/ -name "*.ipk" -exec tar czvf ./openwrt/bin/targets/bcm27xx/bcm2711/app1.tar.gz {} +
+        find ./openwrt/bin/packages/ -name "*.ipk" -exec tar czvf ./openwrt/bin/targets/*/*/app1.tar.gz {} +
         
     - name: Upload Artifact
       uses: actions/upload-artifact@main
       with:
         name: ${{ steps.generate_name.outputs.release_name }}
-        path: ./openwrt/bin/targets/bcm27xx/bcm2711/*
+        path: ./openwrt/bin/targets/*/*/*
 
     - name: Create Release
       uses: ncipollo/release-action@v1
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        artifacts: ./openwrt/bin/targets/bcm27xx/bcm2711/*
+        artifacts: ./openwrt/bin/targets/*/*/*
         name: ${{ steps.generate_name.outputs.release_name }}
         tag: ${{ steps.generate_name.outputs.release_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
