@@ -13,6 +13,9 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.0.253/g' package/base-files/files/bin/config_generate
 
+# Modify errors
+sed -i 's/5.15/5.19/g' /target/linux/rockchip/makefile
+
 # Add CPU Temperature
 echo 'msgid "CPU Temperature"'>>feeds/luci/modules/luci-base/po/zh-cn/base.po
 echo 'msgid "CPU温度"'>>feeds/luci/modules/luci-base/po/zh-cn/base.po
