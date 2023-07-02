@@ -81,6 +81,9 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        
+    - name: Load patchs
+      run: cp -rf ./PATCH/rockchip-5.15/* ./target/linux/rockchip/patches-5.15/
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
