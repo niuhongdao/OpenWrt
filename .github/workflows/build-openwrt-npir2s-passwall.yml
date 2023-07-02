@@ -91,7 +91,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P2_SH
         
     - name: Load patchs
-      run: cp -f ./PATCH/rockchip-5.15/* .openwrt/target/linux/rockchip/patches-5.15/
+      run: cp -f ./PATCH/rockchip-5.15/* ./openwrt/target/linux/rockchip/patches-5.15/
         
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@main
