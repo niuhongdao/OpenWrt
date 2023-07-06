@@ -23,3 +23,11 @@ sed -i "${line},$((${line}+2))d" feeds/small8/luci-app-ssr-plus/root/usr/share/s
 sed -i "/result.v2ray_protocol = 'vmess'/a\ \t\tresult.alter_id = info.aid" feeds/small8/luci-app-ssr-plus/root/usr/share/shadowsocksr/subscribe.lua
 sed -i '/-- VmessId/i -- AlterId\no = s:option(Value, "alter_id", translate("AlterId"))\no.datatype = "port"\no.default = 16\no.rmempty = true\no:depends({type = "v2ray", v2ray_protocol = "vmess"})' feeds/small8/luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/client-config.lua
 sed -i '/id = server.vmess_id,/a\ \t\t\t\t\t\talterId = (server.v2ray_protocol == "vmess" or not server.v2ray_protocol) and tonumber(server.alter_id) or nil,' feeds/small8/luci-app-ssr-plus/root/usr/share/shadowsocksr/gen_config.lua
+
+# Add CPU Temperature
+# echo 'msgid "CPU Temperature"'>>feeds/luci/modules/luci-base/po/zh-cn/base.po
+# echo 'msgid "CPU温度"'>>feeds/luci/modules/luci-base/po/zh-cn/base.po
+# sed -i '/local cpu_usage/a\\n\t\tlocal cpu_temperature = luci.sys.exec("cat /sys/class/thermal/thermal_zone0/temp | awk '\''{print int(($0+50)/100)/10}'\''") .. "°C"' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+# sed -i '/userinfo    = user_info,/a\\t\t\tcputemp    = cpu_temperature,' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+# sed -i '/e.innerHTML = info.cpuusage;/a\\n\t\t\tif (e = document.getElementById('\''cputemp'\''))\n\t\t\t\te.innerHTML = info.cputemp;' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+# sed -i '/<tr><td width="33%"><%:CPU usage (%)%><\/td><td id="cpuusage">-<\/td><\/tr>/a\\t\t<tr><td width="33%"><%:CPU Temperature%><\/td><td id="cputemp">-<\/td><\/tr>' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
