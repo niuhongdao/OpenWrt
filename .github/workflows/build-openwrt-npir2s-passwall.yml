@@ -27,7 +27,7 @@ env:
   CONFIG_FILE: config.buildinfo.npir2s
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  UPLOAD_BIN_DIR: false
+  UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
@@ -136,9 +136,9 @@ jobs:
         cd ./openwrt/bin/targets/rockchip/armv8/
         rm -rf ./packages/
         
-    - name: Add_ipk
-      run:
-        find ./openwrt/bin/packages/ -name "*.ipk" -exec tar czvf ./openwrt/bin/targets/rockchip/armv8/app1.tar.gz {} +
+#    - name: Add_ipk
+#      run:
+#        find ./openwrt/bin/packages/ -name "*.ipk" -exec tar czvf ./openwrt/bin/targets/rockchip/armv8/app1.tar.gz {} +
         
     - name: Upload Artifact
       uses: actions/upload-artifact@main
