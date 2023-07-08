@@ -11,10 +11,10 @@
 #
 sed -i 's/192.168.1.1/192.168.0.254/g' package/base-files/files/bin/config_generate     #更换初始IP
 
-echo  >> feeds/small8/luci-app-passwall2/po/zh-cn/passwall2.po
-echo 'msgid "Manually update"' >> feeds/small8/luci-app-passwall2/po/zh-cn/passwall2.po
-echo 'msgstr "手动更新"' >> feeds/small8/luci-app-passwall2/po/zh-cn/passwall2.po
-echo  >> feeds/small8/luci-app-passwall2/po/zh-cn/passwall2.po
+echo  >> package/openwrt-passwall/luci-app-passwall2/po/zh-cn/passwall2.po
+echo 'msgid "Manually update"' >> package/openwrt-passwall/luci-app-passwall2/po/zh-cn/passwall2.po
+echo 'msgstr "手动更新"' >> package/openwrt-passwall/luci-app-passwall22/po/zh-cn/passwall2.po
+echo  >> fpackage/openwrt-passwall/luci-app-passwall2/po/zh-cn/passwall2.po
 
 # Add CPU Temperature
 echo 'msgid "CPU Temperature"'>>feeds/luci/modules/luci-base/po/zh-cn/base.po
