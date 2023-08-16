@@ -27,7 +27,7 @@ env:
   CONFIG_FILE: config.buildinfo.rpi4b.ssr-passswall
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  UPLOAD_BIN_DIR: true
+  UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
@@ -55,17 +55,9 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /etc/mysql /etc/php
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
-        sudo -E apt -y purge azure-cli* docker* ghc* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* moby* snap*
-        sudo -E apt-get -qq full-upgrade -y
-        sudo -E apt-get install -y ack antlr3 aria2 asciidoc autoconf automake autopoint binutils bison build-essential \
-        bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib g++-multilib \
-        git gperf haveged help2man intltool libc6-dev-i386 libz-dev libelf-dev libglib2.0-dev libgmp3-dev libltdl-dev libfuse-dev \
-        libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libreadline-dev libssl-dev libtool lrzsz \
-        mkisofs msmtp nano ninja-build p7zip p7zip-full patch pkgconf python2.7 python3 python3-pip python3-pyelftools python3-setuptools \
-        libpython3-dev qemu-utils rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip \
-        vim wget xmlto xxd zlib1g-dev yasm
+        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
@@ -97,14 +89,6 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        # Add CPU Temperature
-        echo 'msgid "CPU Temperature"'>>feeds/luci/modules/luci-base/po/zh-cn/base.po
-        echo 'msgid "CPU温度"'>>feeds/luci/modules/luci-base/po/zh-cn/base.po
-        sed -i '/local cpu_usage/a\\n\t\tlocal cpu_temperature = luci.sys.exec("cat /sys/class/thermal/thermal_zone0/temp | awk '\''{print int(($0+50)/100)/10}'\''") .. "°C"' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
-        sed -i '/userinfo    = user_info,/a\\t\t\tcputemp    = cpu_temperature,' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
-        sed -i '/e.innerHTML = info.cpuusage;/a\\n\t\t\tif (e = document.getElementById('\''cputemp'\''))\n\t\t\t\te.innerHTML = info.cputemp;' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
-        sed -i '/<tr><td width="33%"><%:CPU usage (%)%><\/td><td id="cpuusage">-<\/td><\/tr>/a\\t\t<tr><td width="33%"><%:CPU Temperature%><\/td><td id="cputemp">-<\/td><\/tr>' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
-
         
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@main
@@ -139,6 +123,10 @@ jobs:
       run: |
         cd ./openwrt/bin/targets/bcm27xx/bcm2711/
         rm -rf ./packages/
+        
+    - name: Add_ipk
+      run:
+        find ./openwrt/bin/packages/ -name "*.ipk" -exec tar czvf ./openwrt/bin/targets/bcm27xx/bcm2711/app1.tar.gz {} +
         
     - name: Upload Artifact
       uses: actions/upload-artifact@main
