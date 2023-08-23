@@ -94,8 +94,22 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        cp -f patch/xhci-quirks-add-link-TRB-quirk-for-VL805.patch openwrt/target/linux/bcm27xx/patches-5.15/950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
-
+        ## Modify 950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
+        sed -i 's/@@ -1906,6 +1906,7 @@ struct xhci_hcd {/@@ -1908,6 +1908,7 @@ struct xhci_hcd {/g' \
+        openwrt/target/linux/bcm27xx/patches-5.15/950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
+        sed -i 's/#define XHCI_RESET_TO_DEFAULT BIT_ULL(44)/#define XHCI_ZHAOXIN_HOST   BIT_ULL(46)/g' \
+        openwrt/target/linux/bcm27xx/patches-5.15/950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
+        sed -i 's/#define XHCI_SUSPEND_RESUME_CLKS      BIT_ULL(43)/#define XHCI_ZHAOXIN_TRB_FETCH      BIT_ULL(45)/g' \
+        openwrt/target/linux/bcm27xx/patches-5.15/950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
+        sed -i 's/#define XHCI_EP_CTX_BROKEN_DCS        BIT_ULL(42)/#define XHCI_RESET_TO_DEFAULT       BIT_ULL(44)/g' \
+        openwrt/target/linux/bcm27xx/patches-5.15/950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
+        # Add CPU Temperature
+        echo 'msgid "CPU Temperature"'>>openwrt/feeds/luci/modules/luci-base/po/zh-cn/base.po
+        echo 'msgid "CPU温度"'>>openwrt/feeds/luci/modules/luci-base/po/zh-cn/base.po
+        sed -i '/local cpu_usage/a\\n\t\tlocal cpu_temperature = luci.sys.exec("cat /sys/class/thermal/thermal_zone0/temp | awk '\''{print int(($0+50)/100)/10}'\''") .. "°C"' openwrt/feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+        sed -i '/userinfo    = user_info,/a\\t\t\tcputemp    = cpu_temperature,' openwrt/feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+        sed -i '/e.innerHTML = info.cpuusage;/a\\n\t\t\tif (e = document.getElementById('\''cputemp'\''))\n\t\t\t\te.innerHTML = info.cputemp;' openwrt/feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+        sed -i '/<tr><td width="33%"><%:CPU usage (%)%><\/td><td id="cpuusage">-<\/td><\/tr>/a\\t\t<tr><td width="33%"><%:CPU Temperature%><\/td><td id="cputemp">-<\/td><\/tr>' openwrt/feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
