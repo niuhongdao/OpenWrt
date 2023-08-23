@@ -94,6 +94,7 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        cat openwrt/target/linux/bcm27xx/patches-5.15/950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
         ## Modify 950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
         sed -i 's/@@ -1906,6 +1906,7 @@ struct xhci_hcd {/@@ -1908,6 +1908,7 @@ struct xhci_hcd {/g' \
         openwrt/target/linux/bcm27xx/patches-5.15/950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
@@ -103,6 +104,7 @@ jobs:
         openwrt/target/linux/bcm27xx/patches-5.15/950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
         sed -i 's/#define XHCI_EP_CTX_BROKEN_DCS        BIT_ULL(42)/#define XHCI_RESET_TO_DEFAULT       BIT_ULL(44)/g' \
         openwrt/target/linux/bcm27xx/patches-5.15/950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
+        cat openwrt/target/linux/bcm27xx/patches-5.15/950-0600-xhci-quirks-add-link-TRB-quirk-for-VL805.patch
         # Add CPU Temperature
         echo 'msgid "CPU Temperature"'>>openwrt/feeds/luci/modules/luci-base/po/zh-cn/base.po
         echo 'msgid "CPU温度"'>>openwrt/feeds/luci/modules/luci-base/po/zh-cn/base.po
