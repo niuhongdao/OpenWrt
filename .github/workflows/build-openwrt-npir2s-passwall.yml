@@ -128,10 +128,6 @@ jobs:
         cd ./openwrt/bin/targets/rockchip/armv8/
         rm -rf ./packages/
         
-#    - name: Add_ipk
-#      run:
-#        find ./openwrt/bin/packages/ -name "*.ipk" -exec tar czvf ./openwrt/bin/targets/rockchip/armv8/app1.tar.gz {} +
-        
     - name: Upload Artifact
       uses: actions/upload-artifact@main
       with:
