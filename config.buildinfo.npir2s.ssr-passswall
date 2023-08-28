@@ -1,174 +1,174 @@
-CONFIG_TARGET_rockchip=y
-CONFIG_TARGET_rockchip_armv8=y
-CONFIG_TARGET_rockchip_armv8_DEVICE_friendlyarm_nanopi-r2s=y
-# CONFIG_LIBCURL_UNIX_SOCKETS is not set
-CONFIG_MBEDTLS_AES_C=y
-CONFIG_MBEDTLS_CMAC_C=y
-CONFIG_MBEDTLS_DES_C=y
-CONFIG_MBEDTLS_ECP_DP_CURVE25519_ENABLED=y
-CONFIG_MBEDTLS_ECP_DP_SECP256K1_ENABLED=y
-CONFIG_MBEDTLS_ECP_DP_SECP256R1_ENABLED=y
-CONFIG_MBEDTLS_ECP_DP_SECP384R1_ENABLED=y
-CONFIG_MBEDTLS_ENTROPY_FORCE_SHA256=y
-CONFIG_MBEDTLS_GCM_C=y
-CONFIG_MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED=y
-CONFIG_MBEDTLS_KEY_EXCHANGE_ECDHE_PSK_ENABLED=y
-CONFIG_MBEDTLS_KEY_EXCHANGE_ECDHE_RSA_ENABLED=y
-CONFIG_MBEDTLS_KEY_EXCHANGE_PSK_ENABLED=y
-CONFIG_MBEDTLS_NIST_KW_C=y
-CONFIG_MBEDTLS_RSA_NO_CRT=y
-CONFIG_PACKAGE_6in4=y
-CONFIG_PACKAGE_boost=y
-CONFIG_PACKAGE_boost-date_time=y
-CONFIG_PACKAGE_boost-program_options=y
-CONFIG_PACKAGE_boost-system=y
-CONFIG_PACKAGE_brook=y
-CONFIG_PACKAGE_coreutils-nohup=y
-# CONFIG_PACKAGE_etherwake is not set
-CONFIG_PACKAGE_haproxy=y
-CONFIG_PACKAGE_hysteria=y
-CONFIG_PACKAGE_ip6tables=y
-CONFIG_PACKAGE_ip6tables-extra=y
-CONFIG_PACKAGE_ip6tables-mod-nat=y
-CONFIG_PACKAGE_ipt2socks=y
-CONFIG_PACKAGE_iptables-mod-conntrack-extra=y
-CONFIG_PACKAGE_iptables-mod-iprange=y
-CONFIG_PACKAGE_iptables-mod-socket=y
-CONFIG_PACKAGE_ipv6helper=y
-CONFIG_PACKAGE_kcptun-client=y
-CONFIG_PACKAGE_kcptun-config=y
-CONFIG_PACKAGE_kmod-fs-ntfs=y
-CONFIG_PACKAGE_kmod-fs-squashfs=y
-CONFIG_PACKAGE_kmod-ip6tables=y
-CONFIG_PACKAGE_kmod-ip6tables-extra=y
-CONFIG_PACKAGE_kmod-ipt-conntrack-extra=y
-CONFIG_PACKAGE_kmod-ipt-iprange=y
-CONFIG_PACKAGE_kmod-ipt-nat6=y
-CONFIG_PACKAGE_kmod-ipt-socket=y
-CONFIG_PACKAGE_kmod-iptunnel=y
-CONFIG_PACKAGE_kmod-iptunnel4=y
-# CONFIG_PACKAGE_kmod-nf-conntrack-netlink is not set
-CONFIG_PACKAGE_kmod-nf-ipt6=y
-CONFIG_PACKAGE_kmod-nf-log6=y
-CONFIG_PACKAGE_kmod-nf-nat6=y
-CONFIG_PACKAGE_kmod-nf-reject6=y
-CONFIG_PACKAGE_kmod-nf-socket=y
-CONFIG_PACKAGE_kmod-sit=y
-CONFIG_PACKAGE_libcap=y
-CONFIG_PACKAGE_libcares=y
-CONFIG_PACKAGE_libevent2=y
-CONFIG_PACKAGE_libltdl=y
-CONFIG_PACKAGE_liblua5.3=y
-CONFIG_PACKAGE_liblzma=y
-CONFIG_PACKAGE_libmbedtls=y
-CONFIG_PACKAGE_libnss=y
-CONFIG_PACKAGE_libreadline=y
-CONFIG_PACKAGE_libsqlite3=y
-CONFIG_PACKAGE_libstdcpp=y
-CONFIG_PACKAGE_libuv=y
-CONFIG_PACKAGE_libwebsockets-full=y
-CONFIG_PACKAGE_luci-app-adguardhome=y
-# CONFIG_PACKAGE_luci-app-arpbind is not set
-# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_ShadowsocksR_Libev_Client is not set
-# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_ShadowsocksR_Libev_Server is not set
-# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Shadowsocks_Libev_Client is not set
-# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Shadowsocks_Libev_Server is not set
-# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Simple_Obfs is not set
-# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Socks_Server is not set
-# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Trojan is not set
-# CONFIG_PACKAGE_luci-app-bypass_INCLUDE_Xray is not set
-# CONFIG_PACKAGE_luci-app-ddns is not set
-CONFIG_PACKAGE_luci-app-netdata=y
-# CONFIG_PACKAGE_luci-app-nlbwmon is not set
-CONFIG_PACKAGE_luci-app-passwall2=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Brook=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Hysteria=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_IPv6_Nat=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_NaiveProxy=y
-CONFIG_PACKAGE_luci-app-passwall2_Iptables_Transparent_Proxy=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray is not set
-# CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng is not set
-# CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui is not set
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_IPT2Socks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2=y
-CONFIG_PACKAGE_luci-app-ttyd=y
-# CONFIG_PACKAGE_luci-app-turboacc is not set
-# CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_BBR_CCA is not set
-# CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_OFFLOADING is not set
-# CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_PDNSD is not set
-CONFIG_PACKAGE_luci-app-unblockmusic=y
-CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go=y
-# CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS is not set
-# CONFIG_PACKAGE_luci-app-upnp is not set
-# CONFIG_PACKAGE_luci-app-vlmcsd is not set
-# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Hysteria is not set
-# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_ShadowsocksR_Libev_Server is not set
-# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Trojan is not set
-# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray is not set
-# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray_plugin is not set
-# CONFIG_PACKAGE_luci-app-webd_INCLUDE_WEBD_BINARY is not set
-# CONFIG_PACKAGE_luci-app-wol is not set
-CONFIG_PACKAGE_luci-compat=y
-CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y
-CONFIG_PACKAGE_luci-i18n-netdata-zh-cn=y
-CONFIG_PACKAGE_luci-i18n-passwall2-zh-cn=y
-CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
-CONFIG_PACKAGE_luci-proto-ipv6=y
-CONFIG_PACKAGE_luci-theme-material=y
-# CONFIG_PACKAGE_miniupnpd is not set
-CONFIG_PACKAGE_naiveproxy=y
-CONFIG_PACKAGE_nano=y
-CONFIG_PACKAGE_netdata=y
-# CONFIG_PACKAGE_nlbwmon is not set
-CONFIG_PACKAGE_nspr=y
-CONFIG_PACKAGE_odhcp6c=y
-CONFIG_PACKAGE_odhcp6c_ext_cer_id=0
-CONFIG_PACKAGE_odhcpd-ipv6only=y
-CONFIG_PACKAGE_odhcpd_ipv6only_ext_cer_id=0
-CONFIG_PACKAGE_redsocks2=y
-CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
-CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
-CONFIG_PACKAGE_shadowsocks-libev-ss-server=y
-CONFIG_PACKAGE_trojan=y
-CONFIG_PACKAGE_trojan-plus=y
-CONFIG_PACKAGE_ttyd=y
-CONFIG_PACKAGE_unzip=y
-CONFIG_PACKAGE_v2ray-core=y
-CONFIG_PACKAGE_v2ray-geoip=y
-CONFIG_PACKAGE_v2ray-geosite=y
-CONFIG_PACKAGE_v2ray-plugin=y
-CONFIG_PACKAGE_vim=y
-# CONFIG_PACKAGE_vlmcsd is not set
-# CONFIG_PACKAGE_wol is not set
-CONFIG_PACKAGE_xz=y
-CONFIG_PACKAGE_xz-utils=y
-CONFIG_SQLITE3_COLUMN_METADATA=y
-CONFIG_SQLITE3_DYNAMIC_EXTENSIONS=y
-CONFIG_SQLITE3_FTS3=y
-CONFIG_SQLITE3_FTS4=y
-CONFIG_SQLITE3_FTS5=y
-CONFIG_SQLITE3_JSON1=y
-CONFIG_SQLITE3_RTREE=y
-CONFIG_TARGET_KERNEL_PARTSIZE=20
-CONFIG_TARGET_ROOTFS_PARTSIZE=500
-CONFIG_boost-compile-visibility-hidden=y
-CONFIG_boost-runtime-shared=y
-CONFIG_boost-static-and-shared-libs=y
-CONFIG_boost-variant-release=y
-CONFIG_PACKAGE_kmod-ipt-offload=y
-CONFIG_PACKAGE_kmod-nf-flow=y
-CONFIG_PACKAGE_kmod-tcp-bbr=y
-# CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_SHORTCUT_FE_CM is not set
-CONFIG_PACKAGE_pdnsd-alt=y
+#
+# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+#
+
+name: Build OpenWrt npir2s passwall
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+
+
+env:
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
+  FEEDS_CONF: feeds.conf.default
+  CONFIG_FILE: config.buildinfo.npir2s.ssr-passswall
+  DIY_P1_SH: diy-part1.sh
+  DIY_P2_SH: diy-part2.sh
+  UPLOAD_BIN_DIR: true
+  UPLOAD_FIRMWARE: true
+  UPLOAD_RELEASE: true
+  TZ: Asia/Shanghai
+
+jobs:
+  build_openwrt:
+    name: Build OpenWrt npir2s firmware
+    runs-on: ubuntu-20.04
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+      
+    - name: Generate Tag & Release Name
+      id: generate_name
+      run: |
+        time=$(date +%Y%m%d%H%M)
+        release_tag="$time"
+        release_name="Npir2s-OpenWrt-$time"
+        echo "release_name=$release_name" >> $GITHUB_OUTPUT
+        echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
+        
+    - name: Initialization environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /etc/mysql /etc/php
+        sudo -E apt-get -qq update
+        sudo -E apt -y purge azure-cli* docker* ghc* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* moby* snap*
+        sudo -E apt-get -qq full-upgrade -y
+        sudo -E apt-get install -y ack antlr3 aria2 asciidoc autoconf automake autopoint binutils bison build-essential \
+        bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib g++-multilib \
+        git gperf haveged help2man intltool libc6-dev-i386 libz-dev libelf-dev libglib2.0-dev libgmp3-dev libltdl-dev libfuse-dev \
+        libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libreadline-dev libssl-dev libtool lrzsz \
+        mkisofs msmtp nano ninja-build p7zip p7zip-full patch pkgconf python2.7 python3 python3-pip python3-pyelftools python3-setuptools \
+        libpython3-dev qemu-utils rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip \
+        vim wget xmlto xxd zlib1g-dev yasm
+        sudo -E apt-get -qq autoremove --purge
+        sudo -E apt-get -qq clean
+        sudo timedatectl set-timezone "$TZ"
+        sudo mkdir -p /workdir
+        sudo chown $USER:$GROUPS /workdir
+        
+    - name: Clone source code
+      working-directory: /workdir
+      run: |
+        df -hT $PWD
+        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        
+    - name: Load custom feeds
+      run: |
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        chmod +x $DIY_P1_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P1_SH
+        
+    - name: Update feeds
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
+
+    - name: Load custom configuration
+      run: |
+        [ -e files ] && mv files openwrt/files
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        chmod +x $DIY_P2_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P2_SH
+        
+    - name: SSH connection to Actions
+      uses: P3TERX/ssh2actions@main
+      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+      env:
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        
+    - name: Download package
+      id: package
+      run: |
+        cd openwrt
+        make defconfig
+        make download -j8
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \;
+        
+    - name: Compile the firmware
+      id: compile
+      run: |
+        cd openwrt
+        echo -e "$(nproc) thread compile"
+        make -j$(nproc) || make -j1 V=s
+        echo "status=success" >> $GITHUB_OUTPUT
+        
+    - name: Upload bin directory
+      uses: actions/upload-artifact@main
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
+      with:
+        name: OpenWrt_directory
+        path: openwrt/bin
+
+    - name: Cleaning
+      run: |
+        cd ./openwrt/bin/targets/rockchip/armv8/
+        rm -rf ./packages/
+        
+#    - name: Add_ipk
+#      run:
+#        find ./openwrt/bin/packages/ -name "*.ipk" -exec tar czvf ./openwrt/bin/targets/rockchip/armv8/app1.tar.gz {} +
+        
+    - name: Upload Artifact
+      uses: actions/upload-artifact@main
+      with:
+        name: ${{ steps.generate_name.outputs.release_name }}
+        path: ./openwrt/bin/targets/rockchip/armv8/*
+
+    - name: Create Release
+      uses: ncipollo/release-action@v1
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      with:
+        artifacts: ./openwrt/bin/targets/rockchip/armv8/*
+        name: ${{ steps.generate_name.outputs.release_name }}
+        tag: ${{ steps.generate_name.outputs.release_tag }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@main
+      with:
+        token: ${{ github.token }}
+        repository: ${{ github.repository }}
+        retain_days: 2
+        keep_minimum_runs: 1
+        
+    - name: Remove old Releases
+      uses: dev-drprasad/delete-older-releases@v0.2.1
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      with:
+        keep_latest: 4
+        delete_tags: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
