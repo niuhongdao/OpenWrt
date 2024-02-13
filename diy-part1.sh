@@ -18,6 +18,7 @@
 # mkdir -p package/helloworld && git clone https://github.com/fw876/helloworld package/helloworld
 mkdir -p package/AdGuardHome && git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/AdGuardHome
 mkdir -p package/openwrt-passwall && git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
+rm -rf package/openwrt-passwall/gn
 mkdir -p package/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall/luci-app-passwall2
 
 echo  >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
