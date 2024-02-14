@@ -15,10 +15,10 @@
 
 # Add a feed source
 # sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-# mkdir -p package/helloworld && git clone https://github.com/fw876/helloworld package/helloworld
+mkdir -p package/helloworld && git clone https://github.com/fw876/helloworld package/helloworld
 mkdir -p package/AdGuardHome && git clone https://github.com/xiaoxiao29/luci-app-adguardhome package/AdGuardHome
-mkdir -p package/openwrt-passwall && git clone https://github.com/niuhongdao/openwrt-passwall-packages package/openwrt-passwall
-mkdir -p package/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/niuhongdao/openwrt-passwall2 package/openwrt-passwall/luci-app-passwall2
+# mkdir -p package/openwrt-passwall && git clone https://github.com/niuhongdao/openwrt-passwall-packages package/openwrt-passwall
+# mkdir -p package/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/niuhongdao/openwrt-passwall2 package/openwrt-passwall/luci-app-passwall2
 
 echo  >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
 echo 'msgid "Manually update"' >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
