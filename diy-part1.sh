@@ -20,7 +20,7 @@ mkdir -p package/AdGuardHome && git clone https://github.com/xiaoxiao29/luci-app
 # mkdir -p package/openwrt-passwall && git clone https://github.com/niuhongdao/openwrt-passwall-packages package/openwrt-passwall
 # mkdir -p package/openwrt-passwall/luci-app-passwall2 && git clone https://github.com/niuhongdao/openwrt-passwall2 package/openwrt-passwall/luci-app-passwall2
 
-echo  >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
-echo 'msgid "Manually update"' >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
-echo 'msgstr "手动更新"' >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
-echo  >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
+# echo  >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
+# echo 'msgid "Manually update"' >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
+# echo 'msgstr "手动更新"' >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
+# echo  >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
