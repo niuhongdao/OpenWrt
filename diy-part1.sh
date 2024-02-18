@@ -18,8 +18,8 @@
 
 git clone --depth=1 https://github.com/xiaoxiao29/luci-app-adguardhome package/AdGuardHome
 # git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+git clone --depth=1 https://github.com/niuhongdao/openwrt-passwall-packages package/openwrt-passwall
+git clone --depth=1 https://github.com/niuhongdao/openwrt-passwall2 package/luci-app-passwall2
 
 # echo  >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
 # echo 'msgid "Manually update"' >> package/openwrt-passwall/luci-app-passwall2/luci-app-passwall2/po/zh-cn/passwall2.po
