@@ -21,3 +21,4 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages packa
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 
 sed -i '23d;26,31d' package/openwrt-passwall/gn/Makefile
+sed -i '23d;26,31d' package/openwrt-passwall/naiveproxy/Makefile
