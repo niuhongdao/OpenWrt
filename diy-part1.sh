@@ -19,7 +19,8 @@
 git clone --depth=1 https://github.com/xiaoxiao29/luci-app-adguardhome package/AdGuardHome
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+git clone --depth=1 https://github.com/vernesong/OpenClash package/openclash
 
-# sed -i '22,32d' package/openwrt-passwall/gn/Makefile
-# rm -rf package/openwrt-passwall/gn/patches
-# sed -i '22,32d' package/openwrt-passwall/naiveproxy/Makefile
+sed -i '22,32d' package/openwrt-passwall/gn/Makefile
+rm -rf package/openwrt-passwall/gn/patches
+sed -i '22,32d' package/openwrt-passwall/naiveproxy/Makefile
