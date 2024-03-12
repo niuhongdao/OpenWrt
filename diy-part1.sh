@@ -16,7 +16,7 @@
 # Add a feed source
 # sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
-git clone --depth=1 https://github.com/fw876/helloworld package/helloworld
+# git clone --depth=1 https://github.com/fw876/helloworld package/helloworld
 git clone --depth=1 https://github.com/xiaoxiao29/luci-app-adguardhome package/AdGuardHome
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
