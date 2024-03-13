@@ -74,6 +74,7 @@ jobs:
         # sudo -E apt-get -qq install clang bison g++ file
         sudo -E apt-get -qq install python3-pyelftools
         sudo apt install libfuse-dev
+        sudo snap install go --classic
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
