@@ -73,7 +73,7 @@ jobs:
         sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
         sudo -E apt-get -qq install python3-pyelftools
         
-        sudo -E apt-get remove golang
+        sudo -E apt-get remove golang-go
         # 下载Go 1.22二进制包
         wget https://golang.org/dl/go1.22.1.linux-amd64.tar.gz
          
