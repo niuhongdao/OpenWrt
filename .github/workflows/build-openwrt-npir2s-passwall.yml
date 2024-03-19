@@ -71,11 +71,25 @@ jobs:
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /etc/mysql /etc/php /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
-        # sudo -E apt-get -qq install clang bison g++ file
         sudo -E apt-get -qq install python3-pyelftools
+        
+        sudo -E apt-get remove golang
+        # 下载Go 1.22二进制包
+        wget https://golang.org/dl/go1.22.linux-amd64.tar.gz
+         
+        # 解压到/usr/local
+        sudo tar -C /usr/local -xzf go1.22.linux-amd64.tar.gz
+         
+        # 将Go的bin目录添加到PATH环境变量中
+        export PATH=$PATH:/usr/local/go/bin
+         
+        # 更新你的profile文件以持久化PATH变量（根据你的shell进行选择，以bash为例）
+        echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bashrc
+         
+        # 重新加载.bashrc文件以应用更改
+        source ~/.bashrc
+        
         sudo apt install libfuse-dev
-        sudo snap install go --classic
-        sudo go env -w GOTOOLCHAIN=go1.22.1+auto
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
