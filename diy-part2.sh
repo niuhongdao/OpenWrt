@@ -15,8 +15,6 @@ sed -i 's/192.168.1.1/192.168.0.253/g' package/base-files/files/bin/config_gener
 
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-rm -rf feeds/packages/net/xray-core
-cp -r feeds/passpackages/xray-core feeds/packages/net/
 
 # Add CPU Temperature
 # echo 'msgid "CPU Temperature"'>>feeds/luci/modules/luci-base/po/zh-cn/base.po
