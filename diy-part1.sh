@@ -23,5 +23,5 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-
 # git clone --depth=1 https://github.com/vernesong/OpenClash package/openclash
 
 # sed -i '22,32d' package/openwrt-passwall/gn/Makefile
-rm -rf package/openwrt-passwall/gn/patches
+# rm -rf package/openwrt-passwall/gn/patches
 # sed -i '22,32d' package/openwrt-passwall/naiveproxy/Makefile
