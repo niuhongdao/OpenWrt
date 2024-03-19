@@ -75,10 +75,10 @@ jobs:
         
         sudo -E apt-get remove golang
         # 下载Go 1.22二进制包
-        wget https://golang.org/dl/go1.22.linux-amd64.tar.gz
+        wget https://golang.org/dl/go1.22.1.linux-amd64.tar.gz
          
         # 解压到/usr/local
-        sudo tar -C /usr/local -xzf go1.22.linux-amd64.tar.gz
+        sudo tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
          
         # 将Go的bin目录添加到PATH环境变量中
         export PATH=$PATH:/usr/local/go/bin
