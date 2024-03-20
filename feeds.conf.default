@@ -1,4 +1,6 @@
-#src-git openwrt-passwall https://github.com/xiaorouji/openwrt-passwall -b luci
+src-git openwrt-passwall2 https://github.com/xiaorouji/openwrt-passwall2 -b main
+src-git openwrt-passwall-packages https://github.com/xiaorouji/openwrt-passwall-packages -b main
+src-git openclash https://github.com/vernesong/OpenClash -b master
 src-git packages https://github.com/coolsnowwolf/packages
 src-git luci https://github.com/coolsnowwolf/luci
 src-git routing https://git.openwrt.org/feed/routing.git
