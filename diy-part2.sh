@@ -14,9 +14,8 @@
 sed -i 's/192.168.1.1/192.168.0.253/g' package/base-files/files/bin/config_generate
 
 
-sed -i 's/=1.21/=1.22/g' feeds/packages/lang/golang/golang/Makefile
-sed -i 's/GO_VERSION_PATCH:=5/GO_VERSION_PATCH:=1/g' feeds/packages/lang/golang/golang/Makefile
-sed -i 's/285cbbdf4b6e6e62ed58f370f3f6d8c30825d6e56c5853c66d3c23bcdb09db19/79c9b91d7f109515a25fc3ecdaad125d67e6bdb54f6d4d98580f46799caea321/g' feeds/packages/lang/golang/golang/Makefile
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 # Add CPU Temperature
 # echo 'msgid "CPU Temperature"'>>feeds/luci/modules/luci-base/po/zh-cn/base.po
