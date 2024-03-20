@@ -15,7 +15,7 @@ sed -i 's/192.168.1.1/192.168.0.253/g' package/base-files/files/bin/config_gener
 
 
 sed -i 's/=1.21/=1.22/g' feeds/packages/lang/golang/golang/Makefile
-sed -i 's/GO_VERSION_PATCH:=5/GO_VERSION_PATCH:=5/g' feeds/packages/lang/golang/golang/Makefile
+sed -i 's/GO_VERSION_PATCH:=5/GO_VERSION_PATCH:=1/g' feeds/packages/lang/golang/golang/Makefile
 
 
 
