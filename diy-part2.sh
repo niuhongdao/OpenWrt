@@ -14,7 +14,7 @@
 sed -i 's/192.168.1.1/192.168.0.253/g' package/base-files/files/bin/config_generate
 
 
-sed -i 's/=1.21/=1.22/g' feeds/packages/lang/golang/Makefile
+sed -i 's/=1.21/=1.22/g' feeds/packages/lang/golang/golang/Makefile
 
 
 
