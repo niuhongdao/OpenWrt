@@ -15,7 +15,7 @@ name: OpenWrt Builder
 
 on:
   schedule:
-    - cron: "30 23 * * 0"
+    - cron: "30 22 * * 0"
   repository_dispatch:
   workflow_dispatch:
 
