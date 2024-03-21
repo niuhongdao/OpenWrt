@@ -17,9 +17,9 @@ sed -i 's/192.168.1.1/192.168.0.253/g' package/base-files/files/bin/config_gener
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
-# sed -i '22,32d' package/openwrt-passwall/gn/Makefile
-rm -rf feed/openwrt-passwall/gn/patches
-# sed -i '22,32d' package/openwrt-passwall/naiveproxy/Makefile
+# sed -i '22,32d' feed/passpackages/gn/Makefile
+rm -rf feed/passpackages/gn/patches
+# sed -i '22,32d' feed/passpackages/naiveproxy/Makefile
 
 # Add CPU Temperature
 # echo 'msgid "CPU Temperature"'>>feeds/luci/modules/luci-base/po/zh-cn/base.po
